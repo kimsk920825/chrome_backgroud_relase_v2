@@ -1,17 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link rel="stylesheet" href="css/styles.css" />
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Daily Goal Reminder</title>
 </head>
 <body>
-    <form id="login-form" class="hidden">
-        <input required maxlength="15" type="text" placeholder="Your name?"/>
-        <input type="submit" value="Log-in"/>
-    </form>
-    <h1 id="greeting" class="hidden"></h1>
-    <script src='js/app.js'></script>
+    <main class="main-info">
+        <div class="main-info__form-logIn">
+            <form id="login-form" class="hidden">
+                <input required maxlength="15" type="text" placeholder="Your name?"/>
+                <input type="submit" value="Log In"/>
+            </form>
+        </div>
+        <div class="main-info__goal">
+            <h1 id="goal" class="hidden"></h1>
+        </div>
+    </main>
+    <script src='js/greetings.js'></script>
 </body>
 </html>
