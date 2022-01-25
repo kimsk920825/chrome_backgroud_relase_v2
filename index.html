@@ -9,6 +9,10 @@
 </head>
 <body>
     <main class="main-info">
+        <div class="main-info__clock">
+            <span class="clock">
+            </span>
+        </div>
         <div class="main-info__form-logIn">
             <form id="login-form" class="hidden">
                 <input required maxlength="15" type="text" placeholder="Your name?"/>
@@ -18,7 +22,16 @@
         <div class="main-info__goal">
             <h1 id="goal" class="hidden"></h1>
         </div>
+        <div class="main-info__goal-lists">
+        <form id="todo-form">
+            <input required type="text" placeholder="To Do Lists" />
+            <input type="submit" value="입력">
+        </form>
+          <ul id="todo-list"></ul>
+        </div>
     </main>
     <script src='js/greetings.js'></script>
+    <script src='js/clock.js'></script>
+    <script src='js/todo.js'></script>
 </body>
 </html>
