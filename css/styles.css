@@ -1,3 +1,8 @@
+body {
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+  color: aliceblue;
+}
+
 .hidden {
   display: none;
 }
@@ -9,4 +14,76 @@
 }
 .main-info__clock .clock {
   font-size: 100px;
+}
+.daily-goal-box {
+  margin-right: 50px;
+  margin-top: 50px;
+}
+.list-box {
+  list-style-type: none;
+  position: relative;
+  margin: 2px;
+  padding: 0.5em 2em 0.5em 2em;
+  background: lightgrey;
+  display: flex;
+  align-items: center;
+  opacity: 0.7;
+  border-radius: 5%;
+  justify-content: space-between;
+}
+#todo-form input:first-child {
+  border: none;
+  border-radius: 20px;
+  padding: 3px 8px 3px 8px;
+}
+#todo-form input:nth-child(1)::placeholder {
+  color: #abc1d0;
+}
+#todo-form input:nth-child(2) {
+  border: none;
+  border-radius: 20px;
+  color: #abc1d0;
+  padding: 3px 8px 3px 8px;
+  background-color: white;
+}
+li.done {
+  background: lightgrey;
+  opacity: 0.7;
+}
+li.done::before {
+  content: "";
+  position: absolute;
+  border-color: #009933;
+  border-style: solid;
+  border-width: 0 0.3em 0.25em 0;
+  height: 1em;
+  top: 1.3em;
+  left: 0.6em;
+  margin-top: -1em;
+  transform: rotate(45deg);
+  width: 0.5em;
+}
+.list-delete {
+  font-size: 15px;
+  border-style: none;
+  background-color: lightgrey;
+  display: block;
+  margin-top: 2px;
+  padding-left: 30px;
+}
+
+.list-text {
+  display: block;
+  color: black;
+  opacity: 1;
+}
+
+.bgImage {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  animation: fadeIn 0.5s linear;
 }
