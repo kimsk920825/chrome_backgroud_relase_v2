@@ -1,6 +1,19 @@
+const toDoList = document.getElementById("todo-list");
+
+//체크 취소 또는 생성
+function checkDone(event) {
+  if (event.target.tagName === "LI") {
+    event.target.classList.toggle("done");
+    if (event.target.classList.contains("done")) {
+      localStorage.setItem("css-propery", "done");
+    } else {
+      console.log("cancel logic is in need ");
+    }
+  }
+toDoList.addEventListener("click", checkDone);
+
 const toDoForm = document.getElementById("todo-form");
 const toDoInput = document.querySelector("#todo-form input");
-const toDoList = document.getElementById("todo-list");
 
 const TODOS_KEY = "to-do";
 const savedToDos = localStorage.getItem(TODOS_KEY);
@@ -18,6 +31,7 @@ function handleToDoSubmit(event) {
   paintToDoHTML(newTodoObj);
   saveLocalStorage();
 }
+
 function saveLocalStorage() {
   localStorage.setItem(TODOS_KEY, JSON.stringify(toDoArray));
 }
@@ -48,11 +62,6 @@ function deleteToDo(event) {
   toDoArray = toDoArray.filter((toDo) => toDo.id !== parseInt(li.id));
   saveLocalStorage();
 }
-function checkDone(ev) {
-  if (ev.target.tagName === "LI") {
-    ev.target.classList.toggle("done");
-  }
-}
 
 //처음이면
 toDoForm.addEventListener("submit", handleToDoSubmit);
@@ -63,5 +72,3 @@ if (savedToDos !== null) {
   toDoArray = parsedToDos;
   parsedToDos.forEach(paintToDoHTML);
 }
-//취소면
-toDoList.addEventListener("click", checkDone);
